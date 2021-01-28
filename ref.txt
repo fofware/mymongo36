@@ -10,4 +10,7 @@ git remote add origin https://github.com/fofware/mydockersrv.git
 git branch -M master
 git push -u origin master
 
-docker run --name mymongo36 -d --restart always -p 27036:27017 -v "$PWD/volumes/data:/data" 
+docker run --name mymongo36 -d --restart always -p 27036:27017 -v "$PWD/volumes/data/db:/data/db" mongo:3.6.21
+
+docker exec -it mymongo36 bash
+
